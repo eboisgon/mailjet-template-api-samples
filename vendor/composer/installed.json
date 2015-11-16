@@ -1,0 +1,49 @@
+[
+    {
+        "name": "mailjet/mailjet-apiv3-php-simple",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mailjet/mailjet-apiv3-php-simple.git",
+            "reference": "212763a63a7532f0ba9564674e53652a98015368"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mailjet/mailjet-apiv3-php-simple/zipball/212763a63a7532f0ba9564674e53652a98015368",
+            "reference": "212763a63a7532f0ba9564674e53652a98015368",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-10-14 09:24:11",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Mailjet": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mailjet",
+                "email": "dev@mailjet.com",
+                "homepage": "https://dev.mailjet.com"
+            }
+        ],
+        "description": "[API v3] Simple PHP wrapper for the Mailjet API",
+        "homepage": "https://github.com/mailjet/mailjet-apiv3-php-simple/",
+        "keywords": [
+            "Mailjet",
+            "api",
+            "email",
+            "php",
+            "v3"
+        ]
+    }
+]
