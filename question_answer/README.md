@@ -18,7 +18,7 @@
 
 ## Result
 
-(question1.png)
+![Examplel 1](question1.png)
 
 (question2.png)
 
