@@ -51,7 +51,7 @@
 ```
 ###Result
 
-![Example 2]((question2.png)
+![Example 2](question2.png)
 
 
 ###Vars
@@ -69,7 +69,7 @@
 ```
 ###Result
 
-![Example 3]((question3.png)
+![Example 3](question3.png)
 
 
 ###Vars
@@ -88,4 +88,4 @@
 ```
 ###Result
 
-![Example 4]((question4.png)
+![Example 4](question4.png)
