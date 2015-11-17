@@ -1,0 +1,84 @@
+<html>
+<body>
+<div style="background-color: white; color: black; padding-left: 10px; padding-right: 10px;">
+
+
+<div style="">
+
+<p>
+		<b>
+			<a style="" href="{{url}}">{{author}}</a>
+			{% if comment!="" %}answered to{% elseif answer!="" %}commented an answer on{% else %} asked {% endif %} 
+			<a style="" href="{{url}}">{{question}}</a>:
+		</b>
+</p>
+{% if comment=="" and answer!="" %}
+<p><b>Answer:</b></p>
+<div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
+{{answer}}
+</div>
+{% endif %}
+
+{% if comment!="" %}
+<div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
+{{comment}}
+</div>
+{% endif %}
+
+{% if answer!="" and comment!="" %}
+<p><b>Answer:</b></p>
+<div style="font-style: italic; margin-bottom: 10px; padding:=
+ 6px;">
+{{answer}}
+</div>
+{% else %}
+<p><b>Question ({{view}} views):</b></p>
+
+<div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
+{{questiondetail}}
+</div>
+{% endif %}
+
+
+{% if comment!="" %}
+<div>
+	<div style="float:left;">
+	<a href="{{url}}" target="_blank">Add Comment</a>
+	</div>
+
+	<div style="float:right">
+	<a href="{{url}}" target="_blank">Vote Up</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down</a>
+	</div>
+<div style='clear:both'></div></div>
+{% elseif answer!="" %}
+
+<div>
+	<div style="float:left;">
+	<a href="{{url}}" target="_blank">Comment this Answer</a>
+	</div>
+
+	<div style="float:right">
+	<a href="{{url}}" target="_blank">Vote Up this Answer</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down this Answer</a>
+	</div>
+<div style='clear:both'></div></div>
+
+
+{% else %}
+<div>
+	<div style="float:left;">
+	<a href="{{url}}" target="_blank">Answer</a> | <a href="{{url}}" target="_blank">Comment</a>
+	</div>
+
+	<div style="float:right">
+		<a href="{{url}}" target="_blank">Vote Up</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down</a>
+	</div>
+	<div style='clear:both'></div>
+</div>
+{% endif %}
+
+
+</div> 
+</div> 
+</body>
+</html>
+
