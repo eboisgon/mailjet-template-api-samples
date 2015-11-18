@@ -277,7 +277,6 @@ marginheight="0" offset="0">
                                                                   style="font-family: 'Trebuchet MS';">
                                                                   {% if var:step == "registration" %}Welcome on our website
                                                                   {% elseif var:step == "confirmation" %}Confirm your email
-                                                                  	{{var:code:""}}
                                                                   {% elseif var:step == "3day" %}3 days already!!!
                                                                   {% else %}
                                                                   {% endif %}
@@ -381,12 +380,11 @@ marginheight="0" offset="0">
                                                                   style="font-size: 14px;"><span class="rangy-font-family"
                                                                   style="font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;"><span class="rangy-color"
                                                                   style="color: rgb(102, 21, 21);">
-                                                                  {% if var:step == "registration" %}
-                                                                  Thanks
-                                                                  {% elseif var:step == "confirmation" %}
-                                                                  click here to confirm your email
-                                                                  {% elseif var:step == "3day" %}3 days already!!!
+                                                                  {% if var:step == "registration" %}Thanks you for registering with us
+                                                                  {% elseif var:step == "confirmation" %}Please verify you email by clicking on the button bellow
+                                                                  {% elseif var:step == "3day" %}3 days already!!! We hope you enjoyed our services.
                                                                   {% else %}
+									{{messagecontent}}
                                                                   {% endif %}</span></span></span></span>
 
                                                                   <div>
@@ -547,7 +545,7 @@ marginheight="0" offset="0">
                                                                 <tr>
                                                                   <td>
                                                                     <div class="image-placeholder">
-                                                                      <img src="http://www.eboisgon.net/media/{{var:badge:""}}-{{var:level:""}}.png">
+                                                                      <img src="https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/all_in_one_transac/img/{{var:badge:""}}-{{var:level:""}}.png">
                                                                       </div>
                                                                     </td>
                                                                   </tr>
@@ -796,9 +794,7 @@ marginheight="0" offset="0">
                                                                     style="display:inline-block;text-decoration:none;background-color:#4bb9f1;border:1px solid #4bb9f1;border-radius:60px;color:#ffffff;font-size:13px;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;padding:15px 30px;"
                                                                     class="content"
                                                                     contenteditable="false">
-                                                                    GET
-                                                                    IN
-                                                                    TOUCH</a></td>
+                                                                    {% if var:step == "confirmation" %}CLICK HERE TO CONFIRM{% else %}GET IN TOUCH{% endif %}</a></td>
                                                                   </tr>
                                                                 </table>
                                                               </td>
