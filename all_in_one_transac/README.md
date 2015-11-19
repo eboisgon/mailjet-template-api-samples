@@ -22,7 +22,7 @@ This example handle :
 )
 ```
 
-## Result
+## Results
 
 ###Vars
 ```
