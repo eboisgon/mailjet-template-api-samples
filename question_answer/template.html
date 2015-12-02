@@ -7,58 +7,58 @@
 
 <p>
 		<b>
-			<a style="" href="{{url}}">{{author}}</a>
-			{% if comment!="" and answer=="" %} commented on {% elseif comment!="" %} commented an answer on {% elseif answer!="" %} answered {% else %} asked {% endif %} 
-			<a style="" href="{{url}}">{{question}}</a>:
+			<a style="" href="{{var:url}}">{{var:author}}</a>
+			{% if var:comment!="" and var:answer=="" %} commented on {% elseif var:comment!="" %} commented an answer on {% elseif var:answer!="" %} answered {% else %} asked {% endif %} 
+			<a style="" href="{{var:url}}">{{var:question}}</a>:
 		</b>
 </p>
-{% if comment=="" and answer!="" %}
+{% if var:comment=="" and var:answer!="" %}
 <p><b>Answer:</b></p>
 <div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
-{{answer}}
+{{var:answer}}
 </div>
 {% endif %}
 
-{% if comment!="" %}
+{% if var:comment!="" %}
 <div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
-{{comment}}
+{{var:comment}}
 </div>
 {% endif %}
 
-{% if answer!="" and comment!="" %}
+{% if var:answer!="" and var:comment!="" %}
 <p><b>Answer:</b></p>
 <div style="font-style: italic; margin-bottom: 10px; padding:=
  6px;">
-{{answer}}
+{{var:answer}}
 </div>
 {% else %}
-<p><b>Question ({{view}} views):</b></p>
+<p><b>Question ({{var:view}} views):</b></p>
 
 <div style="font-style: italic; margin-bottom: 10px; padding: 6px;">
-{{questiondetail}}
+{{var:questiondetail}}
 </div>
 {% endif %}
 
 
-{% if comment!="" %}
+{% if var:comment!="" %}
 <div>
 	<div style="float:left;">
-	<a href="{{url}}" target="_blank">Add Comment</a>
+	<a href="{{var:url}}" target="_blank">Add Comment</a>
 	</div>
 
 	<div style="float:right">
-	<a href="{{url}}" target="_blank">Vote Up</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down</a>
+	<a href="{{var:url}}" target="_blank">Vote Up</a> | {{var:vote}} | <a href="{{var:url}}" target="_blank">Vote Down</a>
 	</div>
 <div style='clear:both'></div></div>
-{% elseif answer!="" %}
+{% elseif var:answer!="" %}
 
 <div>
 	<div style="float:left;">
-	<a href="{{url}}" target="_blank">Comment this Answer</a>
+	<a href="{{var:url}}" target="_blank">Comment this Answer</a>
 	</div>
 
 	<div style="float:right">
-	<a href="{{url}}" target="_blank">Vote Up this Answer</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down this Answer</a>
+	<a href="{{var:url}}" target="_blank">Vote Up this Answer</a> | {{var:vote}} | <a href="{{var:url}}" target="_blank">Vote Down this Answer</a>
 	</div>
 <div style='clear:both'></div></div>
 
@@ -66,11 +66,11 @@
 {% else %}
 <div>
 	<div style="float:left;">
-	<a href="{{url}}" target="_blank">Answer</a> | <a href="{{url}}" target="_blank">Comment</a>
+	<a href="{{var:url}}" target="_blank">Answer</a> | <a href="{{var:url}}" target="_blank">Comment</a>
 	</div>
 
 	<div style="float:right">
-		<a href="{{url}}" target="_blank">Vote Up</a> | {{vote}} | <a href="{{url}}" target="_blank">Vote Down</a>
+		<a href="{{var:url}}" target="_blank">Vote Up</a> | {{var:vote}} | <a href="{{var:url}}" target="_blank">Vote Down</a>
 	</div>
 	<div style='clear:both'></div>
 </div>

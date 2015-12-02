@@ -5,7 +5,7 @@ This example can be used for notification of new question, new comment on a ques
 In the test.php script, you can see that the subject also rely on templating language:
 
 ```
-{{author}}{% if comment!="" and answer=="" %} commented on {% elseif comment!="" %} commented an answer on {% elseif answer!="" %} answered {% else %} asked {% endif %} {{question}}
+{{var:author}}{% if var:comment!="" and var:answer=="" %} commented on {% elseif var:comment!="" %} commented an answer on {% elseif var:answer!="" %} answered {% else %} asked {% endif %} {{var:question}}
 ```
 
 ## Vars 
@@ -28,26 +28,26 @@ In the test.php script, you can see that the subject also rely on templating lan
 
 ```
 
-{% if comment!="" and answer=="" %} commented on {% elseif comment!="" %} commented an answer on {% elseif answer!="" %} answered {% else %} asked {% endif %}
+{% if var:comment!="" and var:answer=="" %} commented on {% elseif var:comment!="" %} commented an answer on {% elseif var:answer!="" %} answered {% else %} asked {% endif %}
  
-{% if comment=="" and answer!="" %}
+{% if var:comment=="" and var:answer!="" %}
 
 {% endif %}
 
-{% if comment!="" %}
+{% if var:comment!="" %}
 
 {% endif %}
 
-{% if answer!="" and comment!="" %}
+{% if var:answer!="" and var:comment!="" %}
 
 {% else %}
 
 {% endif %}
 
 
-{% if comment!="" %}
+{% if var:comment!="" %}
 
-{% elseif answer!="" %}
+{% elseif var:answer!="" %}
 
 {% else %}
 
