@@ -30,28 +30,37 @@ $params = array(
 					"firstname" => "Emmanuel1",
 					"header" => "http://oi08.mjt.lu/img/oi08/b/14ky5/vs3r.png", 
 					"header_color" => "#ffffff", 
-					"namesupport" => "", 
+					"bg_color" => "#d6dde5", 
+					"namesupport" => "Your Nukleus Support", 
 					"twitter" => "igra_fan", 
+					"base_url" => "http://www.mailjet.com", 
+					"request_number" => 11111
 				)
 		),
 		array( 
 			"Email" => $recipients[1],
 			"Vars" => array( 
 					"firstname" => "Emmanuel2",
-					"header" => "http://oi08.mjt.lu/img/oi08/b/14ky5/vs3r.png", 
+					"header" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/white_label/img/mailjet.jpg", 
 					"header_color" => "#2f323b", 
-					"namesupport" => "", 
+					"bg_color" => "#d6dde5", 
+					"namesupport" => "Mailjet", 
 					"twitter" => "mailjet", 
+					"base_url" => "http://www.mailjet.com", 
+					"request_number" => 11111
 				)
 		),
 		array( 
 			"Email" => $recipients[2],
 			"Vars" => array( 
 					"firstname" => "Emmanuel3",
-					"header" => "http://oi08.mjt.lu/img/oi08/b/14ky5/vs3r.png", 
-					"header_color" => "#ff00ff", 
-					"namesupport" => "", 
+					"header" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/white_label/img/mailjet.jpg", 
+					"header_color" => "#2f323b", 
+					"bg_color" => "#FFCC4D", 
+					"namesupport" => "Mailjet Developers", 
 					"twitter" => "mailjetdev", 
+					"base_url" => "http://dev.mailjet.com", 
+					"request_number" => 11111
 				)
 		)
 	
