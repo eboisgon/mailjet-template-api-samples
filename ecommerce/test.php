@@ -14,7 +14,7 @@ $params = array(
     "method" => "POST",
     "FromEmail" => $sender,
     "FromName" => "Mailjet Pilot",
-    "Subject" => '{{firstname}}, {% if var:step == "registration" %}Thank you for registering{% elseif var:step == "confirmation" %}Please confirm your email{% elseif var:step == "3day" %}3 days already with us!!!{% elseif var:step == "badge" %}A new badge for you{% else %}Small message from us{% endif %}',
+    "Subject" => '{{ var:firstname }}, {% if var:step == "confirmorder" %}Confirmation of purchase: {{ var:productname:"" }}{% elseif var:step == "confirmshipping" %}Your {{ var:productname:"" }} is coming your way{% elseif var:step == "unavailable" %}Your purchase is unavailable: {{ var:productname:"" }}{% elseif var:step == "refund" %}Refund of your purchase {{ var:productname:"" }}{% elseif var:step == "feedback" %}Please give us some feedback about your {{ var:productname:"" }}{% endif %}',
     "Html-part" => $html_part,
     "Vars" => array (
 	"firstname" => "",
@@ -29,8 +29,12 @@ $params = array(
 			"Vars" => array( 
 					"firstname" => "Emmanuel1",
 					"step" => "confirmorder", 
-					"productname" => "", 
-					"productimg" => "", 
+					"productname" => "Camera", 
+					"productdescription" => "Description",
+					"productimg" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/ecommerce/img/photo1.jpg", 
+					"order_id" => "1111111",
+					"delivery" => "2 EUR",
+					"total_price" => "30 EUR"
 				)
 		),
 		array( 
@@ -38,17 +42,22 @@ $params = array(
 			"Vars" => array( 
 					"firstname" => "Emmanuel2",
 					"step" => "confirmshipping", 
-					"productname" => "", 
-					"productimg" => "", 
+					"productname" => "Shoes", 
+					"productdescription" => "Description",
+					"productimg" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/ecommerce/img/photo2.jpg", 
+					"deliverytrackurl" => "#", 
+					"delivery" => "UPS",
 				)
 		),
 		array( 
 			"Email" => $recipients[2],
 			"Vars" => array( 
 					"firstname" => "Emmanuel3",
-					"step" => "unavailable", 
-					"productname" => "", 
-					"productimg" => "", 
+					"step" => "unavailable",
+					"reasonunavailable" => "Restocking",
+					"productname" => "rubik's cube", 
+					"productdescription" => "Description",
+					"productimg" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/ecommerce/img/photo3.jpg", 
 				)
 		),
 		array( 
@@ -56,8 +65,12 @@ $params = array(
 			"Vars" => array( 
 					"firstname" => "Emmanuel4",
 					"step" => "refund", 
-					"productname" => "", 
-					"productimg" => "", 
+					"productname" => "Camera", 
+					"productdescription" => "Description",
+					"productimg" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/ecommerce/img/photo1.jpg", 
+					"order_id" => "1111111",
+					"delivery" => "2 EUR",
+					"total_price" => "30 EUR"
 				)
 		),
 		array( 
@@ -65,19 +78,11 @@ $params = array(
 			"Vars" => array( 
 					"firstname" => "Emmanuel5",
 					"step" => "feedback", 
-					"productname" => "", 
-					"productimg" => "", 
+					"productname" => "Shoes", 
+					"productdescription" => "Description",
+					"productimg" => "https://raw.githubusercontent.com/eboisgon/mailjet-template-api-samples/master/ecommerce/img/photo2.jpg", 
 				)
-		),
-		array( 
-			"Email" => $recipients[5],
-			"Vars" => array( 
-					"firstname" => "Emmanuel6",
-					"step" => "feedback", 
-					"productname" => "", 
-					"productimg" => "", 
-				)
-		),
+		)
 	
     )
 );

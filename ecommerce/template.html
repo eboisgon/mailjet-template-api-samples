@@ -253,19 +253,15 @@
                                                                 class="content">
                                                                 <p>
                                                                   Hello
-                                                                  {{var:firstname:"Default
-                                                                  value"}},</p>
+                                                                  {{var:firstname:"dear client"}},</p>
 
-                                                                  <p>
-                                                                  Thanks
-                                                                  for
-                                                                  your
-                                                                  purchase,
-                                                                  please
-                                                                  find
-                                                                  the
-                                                                  receipt
-                                                                  below.</p>
+                                                                  <p>{% if var:step == "confirmorder" %}Thank you for your purchase!!
+									{% elseif var:step == "confirmshipping" %}We just sent your order.
+									{% elseif var:step == "unavailable" %}The product you order is not available.<br><br>
+										Reason : {{ var:reasonunavailable:""}}<br><br>
+										Please contact us if you want to cancel your order.
+									{% elseif var:step == "refund" %}We refunded your purchase.
+									{% elseif var:step == "feedback" %}Please give us some feedback about your Purchase{% endif %}</p>
                                                                 </div>
                                                               </td>
                                                             </tr>
@@ -644,15 +640,7 @@
                                                               align="left">
                                                               <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:13px;font-size:13px"
                                                                 class="content">
-                                                                <p>
-                                                                  Type
-                                                                  here
-                                                                  and
-                                                                  customize
-                                                                  the
-                                                                  font
-                                                                  and
-                                                                  color.</p>
+                                                                <p>{{ var:productdescription }}</p>
                                                                 </div>
                                                               </td>
                                                             </tr>
@@ -702,7 +690,7 @@
             </tr>
           </tbody>
         </table>
-
+	{% if var:step == "feedback" %}
         <table class="section" width="100%" cellpadding="0"
         cellspacing="0" style=
         "border-collapse:collapse;border-spacing:0">
@@ -786,15 +774,7 @@
                                                               align="left">
                                                               <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:13px;font-size:13px"
                                                                 class="content">
-                                                                <p>
-                                                                  Type
-                                                                  here
-                                                                  and
-                                                                  customize
-                                                                  the
-                                                                  font
-                                                                  and
-                                                                  color.</p>
+                                                                <p>Click on the following stars:</p>
                                                                 </div>
                                                               </td>
                                                             </tr>
@@ -844,6 +824,7 @@
             </tr>
           </tbody>
         </table>
+	{% endif %}
 	{% if var:step == "feedback" %}
         <table class="section" width="100%" cellpadding="0"
         cellspacing="0" style=
@@ -1721,6 +1702,7 @@
           </tbody>
         </table>
 	{% endif %}
+	{% if var:step == "confirmorder" or var:step == "refund" %}
         <table class="section" width="100%" cellpadding="0"
         cellspacing="0" style=
         "border-collapse:collapse;border-spacing:0">
@@ -1800,8 +1782,7 @@
                                                                 class="content">
                                                                 <h3>
                                                                   <span style="color: rgb(184, 193, 148)">
-                                                                  TOTAL
-                                                                  PRICE</span></h3>
+                                                                  TOTAL PRICE</span></h3>
 
                                                                   <p>
                                                                   {{var:total_price:"Default
@@ -1890,11 +1871,10 @@
                                                                 class="content">
                                                                 <h3>
                                                                   <span style="color: rgb(184, 193, 148)">
-                                                                  ORDER
-                                                                  DATE</span></h3>
+                                                                  DELIVERY COST</span></h3>
 
                                                                   <div>
-                                                                  {{var:order_date:"Default
+                                                                  {{var:delivery:"Default
                                                                   value"}}
                                                                   </div>
                                                                 </div>
@@ -2036,7 +2016,8 @@
             </tr>
           </tbody>
         </table>
-
+	{% endif %}
+	{% if var:step == "confirmshipping" %}
         <table class="section" width="100%" cellpadding="0"
         cellspacing="0" style=
         "border-collapse:collapse;border-spacing:0">
@@ -2120,15 +2101,7 @@
                                                               align="left">
                                                               <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:13px;font-size:13px"
                                                                 class="content">
-                                                                <p>
-                                                                  Type
-                                                                  here
-                                                                  and
-                                                                  customize
-                                                                  the
-                                                                  font
-                                                                  and
-                                                                  color.</p>
+                                                                <p>Your package as been send by {{ var:delivery:"" }}, <a href="{{ var:deliverytrackurl:"" }}">click here to track</a></p>
                                                                 </div>
                                                               </td>
                                                             </tr>
@@ -2178,6 +2151,7 @@
             </tr>
           </tbody>
         </table>
+	{% endif %}
       </div>
     </div>
   </center>
