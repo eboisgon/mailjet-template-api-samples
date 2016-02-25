@@ -1,0 +1,16 @@
+<html>
+<body>
+<div style="background-color: white; color: black; padding-left: 10px; padding-right: 10px;">
+
+<ul>
+{% for article in var:rss %}
+ <li><a href="{{article.link}}">{{article.title}}</a><br>{{article.description}}</li>
+{% endfor %}
+</ul>
+
+
+
+</div> 
+</body>
+</html>
+
