@@ -14,8 +14,9 @@ $params = array(
     "method" => "POST",
     "FromEmail" => $sender,
     "FromName" => "Mailjet Pilot",
-    "Subject" => '{{firstname}}, {% if var:step == "registration" %}Thank you for registering{% elseif var:step == "confirmation" %}Please confirm your email{% elseif var:step == "3day" %}3 days already with us!!!{% elseif var:step == "badge" %}A new badge for you{% else %}Small message from us{% endif %}',
+    "Subject" => '{{var:firstname}}, {% if var:step == "registration" %}Thank you for registering{% elseif var:step == "confirmation" %}Please confirm your email{% elseif var:step == "3day" %}3 days already with us!!!{% elseif var:step == "badge" %}A new badge for you{% else %}Small message from us{% endif %}',
     "Html-part" => $html_part,
+    "MJ-TemplateLanguage" => true,
     "Vars" => array (
 	"firstname" => "",
 	"step" => "", 

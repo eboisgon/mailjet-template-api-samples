@@ -16,6 +16,7 @@ $params = array(
     "FromName" => "Mailjet Pilot",
     "Subject" => '{{ var:firstname }}, {% if var:step == "confirmorder" %}Confirmation of purchase: {{ var:productname:"" }}{% elseif var:step == "confirmshipping" %}Your {{ var:productname:"" }} is coming your way{% elseif var:step == "unavailable" %}Your purchase is unavailable: {{ var:productname:"" }}{% elseif var:step == "refund" %}Refund of your purchase {{ var:productname:"" }}{% elseif var:step == "feedback" %}Please give us some feedback about your {{ var:productname:"" }}{% endif %}',
     "Html-part" => $html_part,
+    "MJ-TemplateLanguage" => true,
     "Vars" => array (
 	"firstname" => "",
 	"step" => "", 

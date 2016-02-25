@@ -15,6 +15,7 @@ $params = array(
     "FromEmail" => $sender,
     "FromName" => "Mailjet Pilot",
     "Subject" => 'Your ticket to {{var:destination}}',
+    "MJ-TemplateLanguage" => true,
     "Html-part" => $html_part,
 			"Vars" => array( 
 					"author" => "Emmanuel",
